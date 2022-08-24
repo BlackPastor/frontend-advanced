@@ -9,10 +9,13 @@ while (!Number.isInteger(N) || Number(N) == "" || Number(N) < 0) {
   } else if (Number(N) == "") {
     alert("Потрібно ввести числове значення");
     continue;
+  } else if (Number(N) < 0) {
+    alert("Число не може бути від'ємне");
+    continue;
   }
 }
 while (!Number.isInteger(M) || Number(M) == "") {
-  M = +prompt("Введіть число до якого будемо складати(включно)");
+  M = +prompt("Введіть число до якого будемо складати");
   if (!Number.isInteger(M)) {
     alert("Це має бути ціле число");
     continue;
