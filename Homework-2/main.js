@@ -1,7 +1,7 @@
 let N;
 let M;
 
-while (!Number.isInteger(N) || Number(N) == "") {
+while (!Number.isInteger(N) || Number(N) == "" || Number(N) < 0) {
   N = +prompt("Введіть число від якого будемо складати");
   if (!Number.isInteger(N)) {
     alert("Це має бути ціле число");
@@ -30,10 +30,10 @@ while (N >= M) {
 const checkOdd = confirm("Чи потрібно пропускати парні числа?");
 
 let result = 0;
-
+debugger;
 for (i = N; i <= M; i++) {
   if (checkOdd) {
-    if (i % 2) {
+    if (!(i % 2)) {
       result;
     } else {
       result += i;
