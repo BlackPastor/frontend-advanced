@@ -74,7 +74,7 @@ function getRandomPassword(size = 8) {
   let result = '';
 
   for (let i = 0; i < size; i++) {
-    result += (Math.random() * 10).toFixed().toString();
+    result += Math.floor(Math.random() * 10).toString();
   }
 
   return result;
