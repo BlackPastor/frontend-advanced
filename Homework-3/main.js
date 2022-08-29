@@ -70,17 +70,14 @@ function convertCurrency(value) {
 
 // eigth function
 
-function getRandomPassword(n) {
-  let chars = "0123456789";
-  let password = "";
+function getRandomPassword(size = 8) {
+  let result = '';
 
-  for (let i = 0; i < n; i++) {
-    let randomNumber = Math.floor(Math.random() * chars.length);
-
-    password += chars.charAt(randomNumber);
+  for (let i = 0; i < size; i++) {
+    result += (Math.random() * 10).toFixed().toString();
   }
 
-  return password;
+  return result;
 }
 
 // ninth function
