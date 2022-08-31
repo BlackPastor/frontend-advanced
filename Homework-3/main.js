@@ -166,7 +166,7 @@ document.writeln(
 );
 document.writeln(
   "8. Випадковий пароль з 8 символів буде " +
-    getRandomPassword(8) +
+    getRandomPassword() +
     "." +
     "<br/>"
 );

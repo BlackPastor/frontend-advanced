@@ -10,81 +10,63 @@ const themes = [
 
 const marks = [4, 5, 5, 3, 4, 5];
 
-// making pairs ********************************************//
+// making pairs ********************************************/
+const pairs = [],
+  girls = [],
+  boys = [];
 
-function getPairs(students) {
-  const pairs = [
-    [students[0], students[2]],
-    [students[1], students[3]],
-    [students[4], students[5]],
-  ];
-
-  return pairs;
+for (let i = 0; i < students.length; i++) {
+  if (students[i].slice(-1) === "а") {
+    girls.push(students[i]);
+  } else {
+    boys.push(students[i]);
+  }
 }
 
-const pairs = getPairs(students);
+
+
+for (let i = 0; i < students.length / 2; i++) {
+  pairs.push([boys[i], girls[i]]);
+}
+
+console.log(pairs);
 
 // themes ***************************************************//
 
-function getThemes(students) {
-  const pairs = [
-    [students[0] + " і " + students[2], themes[0]],
-    [students[1] + " і " + students[3], themes[1]],
-    [students[4] + " і " + students[5], themes[2]],
-  ];
-  return pairs;
+const pairsAndThemes = [];
+
+for (let i = 0; i < students.length / 2; i++) {
+  pairsAndThemes.push([girls[i] + " і " + boys[i], themes[i]]);
 }
 
-const pairsAndThemes = getThemes(students);
+console.log(pairsAndThemes);
 
 // personal marks *****************************************//
 
-function getPersonalMarks(students) {
-  const Marks = [
-    [students[0], marks[0]],
-    [students[1], marks[1]],
-    [students[2], marks[2]],
-    [students[3], marks[3]],
-    [students[4], marks[4]],
-    [students[5], marks[5]],
-  ];
+const getPersonalMarks = [];
 
-  return Marks;
+for (let i = 0; i < students.length; i++) {
+  getPersonalMarks.push([students[i], marks[i]]);
 }
 
-const personalMarks = getPersonalMarks(students);
+console.log(getPersonalMarks);
 
-// marks **************************************************//
+// marks of themes **************************************************//
 
-function getMarks(students) {
-  const pairs = [
-    [
-      students[0] + " і " + students[2],
-      themes[0],
-      Math.floor(Math.random() * 5 + 1),
-    ],
-    [
-      students[1] + " і " + students[3],
-      themes[1],
-      Math.floor(Math.random() * 5 + 1),
-    ],
-    [
-      students[4] + " і " + students[5],
-      themes[2],
-      Math.floor(Math.random() * 5 + 1),
-    ],
-  ];
-  return pairs;
+const marksOfThemes = [];
+const min = 0,
+      max = 5;
+const randomMarks = Math.floor(Math.random() * (max - min + min) + 1);
+
+for (let i = 0; i < pairs.length; i++) {
+  marksOfThemes.push([pairsAndThemes[i] + ' , ' + randomMarks]);
 }
 
-const marksForStudy = getMarks(students);
+console.log(marksOfThemes);
+
+//***************************************/
 
 document.writeln("1. " + pairs.join(" @ ") + "." + "<br>");
 document.writeln("2. " + pairsAndThemes.join(" @ ") + "." + "<br>");
-document.writeln("3. " + personalMarks.join(" @ ") + "." + "<br>");
-document.writeln("4. " + marksForStudy.join(" @ ") + "." + "<br>");
-
-console.log(pairs);
-console.log(pairsAndThemes);
-console.log(personalMarks);
-console.log(marksForStudy);
+document.writeln("3. " + getPersonalMarks.join(" @ ") + "." + "<br>");
+document.writeln("4. " + marksOfThemes.join(" @ ") + "." + "<br>");
