@@ -12,7 +12,7 @@ const marks = [4, 5, 5, 3, 4, 5];
 
 // making pairs ********************************************/
 function getPairs(students) {
-  
+
   const pairs = [],
     girls = [],
     boys = [];
@@ -35,7 +35,7 @@ const pairs = getPairs(students);
 
 console.log(pairs);
 
-// themes ***************************************************//
+// pairs and themes ***************************************************//
 
 function pairsAndThemes(pairs, themes) {
 
@@ -67,7 +67,7 @@ const studentsMarks = getPersonalMarks(students);
 
 console.log(studentsMarks);
 
-//**************************************/
+// marks of themes **************************************/
 
 function marksOfThemes(themesPairs) {
 
