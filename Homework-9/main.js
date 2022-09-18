@@ -1,48 +1,36 @@
-
-
-
 function generateBlocks() {
-    let container = document.querySelector(".container");
-  
-    for (let i = 0; i < 25; i++) {
-      let box = document.createElement("div");
-      box.classList.add("box");
-      box.style.backgroundColor = getRandomBgColor();
-      container.appendChild(box);
-    }
+  const container = document.createElement("div");
+  document.body.append(container);
+  container.className = "container";
+  container.classList.add("upper");
+  for (let i = 0; i < 25; i++) {
+    const box = document.createElement("div");
+    box.className = "box";
+    container.appendChild(box);
+    box.style.background = "#" + Math.random().toString(16).slice(-6);
   }
-  
-  function getRandomBgColor() {
-    let x = Math.floor(Math.random() * 256);
-    let y = Math.floor(Math.random() * 256);
-    let z = Math.floor(Math.random() * 256);
-    let bgColor = "rgb(" + x + "," + y + "," + z + ")";
-    return bgColor;
+}
+
+generateBlocks();
+
+const text = document.createElement("h1");
+text.innerHTML = "Advanced";
+document.body.append(text);
+
+function generateBlocksInterval() {
+  const containerAdvanced = document.createElement("div");
+  document.body.append(containerAdvanced);
+  containerAdvanced.classList.add("container");
+  for (let i = 0; i < 25; i++) {
+    const box = document.createElement("div");
+    box.className = "box";
+    containerAdvanced.appendChild(box);
+    setInterval(() => {
+      box.style.background = "#" + Math.random().toString(16).slice(-6);
+    }, 1500);
   }
-  
-  generateBlocks();
-  
-  let container2 = document.querySelector(".container2");
-  let title = document.createElement("h1");
-  document.body.after(title, container2);
-  title.innerHTML = "Advanced";
-  
-  function generateBlocksTwo() {
-    let container2 = document.querySelector(".container2");
-  
-    for (let i = 0; i < 25; i++) {
-      let box = document.createElement("div");
-      box.classList.add("box");
-      setInterval(() => {
-        box.style.backgroundColor = getRandomBgColor();
-      }, 1500);
-  
-      console.log(box);
-      container2.appendChild(box);
-    }
-  }
-  
-  generateBlocksTwo();
-  
+}
+
+generateBlocksInterval();
   
   
