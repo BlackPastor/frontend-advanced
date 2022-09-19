@@ -11,25 +11,23 @@ class Student {
   }
   get studentMarks() {
     if (this.isDismissed == false) {
-      return this.marks.split(",").map((str) => {
-        if (Number(str)) {
-          return Number(str);
-        }
-      });
+      return this.marks;
     } else return null;
   }
   set studentMarks(value) {
     if (this.isDismissed == false) {
-      return (this.marks += "," + value);
+      return this.marks.push(value)
     } else return null;
   }
   getAverageMark() {
     if (this.isDismissed == false) {
-      let marksAverage = 0;
-      return this.studentMarks.reduce((curr, item) => {
-        return ((marksAverage += item) / this.studentMarks.length).toFixed(1);
-      }, 0);
-    } else return null;
+      let middle = 0;
+       for (let i = 0; i < this.studentMarks.length; i++) {
+        middle += this.studentMarks[i];
+       }
+       return middle / this.studentMarks.length;
+      }
+     else return null;
   }
   dismiss() {
     return (this.isDismissed = true);
@@ -43,10 +41,10 @@ const student = new Student(
   "Артем Лоїк",
   "ПНТУ ім.Кондратюка",
   "3",
-  "5, 4, 4, 5"
+  [5, 4, 4, 5]
 );
 
-student.studentMarks = "5";
+student.studentMarks = 5;
 student.dismiss();
 student.recover();
 
@@ -57,7 +55,7 @@ console.log(`Середній бал: ${student.getAverageMark()}`);
 class budgetStudent extends Student {
   constructor(fullName, university, course, marks) {
     super(fullName, university, course, marks);
-    setInterval(() => this.getScholapship(), 30000);
+    setInterval(() => this.getScholapship(), 5000);
   }
   getScholapship() {
     if (this.getAverageMark() >= 4) {
@@ -70,7 +68,7 @@ const Serhii = new budgetStudent(
   "Сергій Іпполітов",
   "ПНТУ ім.Кондратюка",
   "5",
-  "5, 4, 4, 5, 3, 4"
+  [5, 4, 4, 5, 3, 4]
 );
 
 
