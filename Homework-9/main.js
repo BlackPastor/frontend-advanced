@@ -27,7 +27,7 @@ function generateBlocksInterval() {
     containerAdvanced.appendChild(box);
     setInterval(() => {
       box.style.background = "#" + Math.random().toString(16).slice(-6);
-    }, 1500);
+    }, 500);
   }
 }
 
