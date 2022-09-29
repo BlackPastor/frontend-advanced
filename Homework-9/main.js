@@ -25,9 +25,10 @@ function generateBlocksInterval() {
     const box = document.createElement("div");
     box.className = "box";
     containerAdvanced.appendChild(box);
+    box.style.background = "#" + Math.random().toString(16).slice(-6);
     setInterval(() => {
       box.style.background = "#" + Math.random().toString(16).slice(-6);
-    }, 500);
+    }, 1000);
   }
 }
 

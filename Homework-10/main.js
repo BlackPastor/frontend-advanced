@@ -2,7 +2,7 @@ const audio = new Audio();
 
 function getKeySound(keyCode) {
   if(keyCode === "KeyA") {
-    return "./music/key1.mp3"
+    return "./music/key1.mp3";
   }
   if(keyCode === "KeyS") {
     return "./music/key2.mp3"

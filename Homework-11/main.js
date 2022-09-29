@@ -9,8 +9,10 @@ async function getRandomChinese(length) {
       result += await string;
       length--;
     }
-    console.log(result);
+    return result;
   }
   
-  getRandomChinese(4);
+  getRandomChinese(4).then(res => {
+    console.log(res);
+  });
   
