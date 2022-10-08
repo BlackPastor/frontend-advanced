@@ -1,6 +1,63 @@
-
-ol{
-    display: flex;
-    gap: 30px;
-    justify-content: center;
+body {
+    background-image: url(./img/wp7248811-star-wars-dark-side-wallpapers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+*{
+    font-family: 'Gemunu Libre', sans-serif;
+}
+.wrapper{
+    margin: 0 auto;
+    text-align: center;
+}
+h1{
+    color: rgba(255, 255, 255, 0.856);
+}
+input {
+    width: 60px;
+    height: 35px;
+    border: none;
+    border-radius: 6px;
+    font-size: 22px;
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.774);
+}
+button {
+    width: 120px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 22px;
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+    user-select: none;
+    background: rgba(255, 255, 255, 0.845);
+}
+img{
+    padding: 0px 10px;
+}
+.content{
+    text-shadow:rgb(43, 66, 209) 1px 1px;
+}
+.loading{
+    color: rgba(255, 255, 255, 0.81);
+    text-shadow: none;
+}
+.info{
+    color:rgba(255, 255, 255, 0.849);
+    font-size: 22px;
+    padding: 10px;
+    user-select: none;
+}
+.planets{
+    color:rgba(255, 255, 255, 0.901);
+    font-size: 22px;
+    padding: 10px;
+    user-select: none;
+}
+.planetsButtons{
+    margin: 0 auto;
+    margin: 10px;
 }
